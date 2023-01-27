@@ -48,8 +48,9 @@
 #define X_DIAG_PIN                         P1_29  // X-STOP
 #define Y_DIAG_PIN                         P1_28  // Y-STOP
 #define Z_DIAG_PIN                         P1_27  // Z-STOP
-#define E0_DIAG_PIN                        P1_26  // E0DET
-#define E1_DIAG_PIN                        P1_25  // E1DET
+//#define E0_DIAG_PIN                        P1_26  // E0DET
+//#define E1_DIAG_PIN                        P1_25  // E1DET
+#define E0_DIAG_PIN                        P1_25  // E1DET
 
 //
 // Limit Switches
@@ -113,19 +114,27 @@
   #define Z_CS_PIN                         P1_17
 #endif
 
-#define E0_STEP_PIN                        P2_06
-#define E0_DIR_PIN                         P2_07
-#define E0_ENABLE_PIN                      P0_04
+//#define E0_STEP_PIN                        P2_06
+//#define E0_DIR_PIN                         P2_07
+//#define E0_ENABLE_PIN                      P0_04
+//#ifndef E0_CS_PIN
+//  #define E0_CS_PIN                        P0_05
+//#endif
+
+//#define E1_STEP_PIN                        P2_11
+//#define E1_DIR_PIN                         P2_12
+//#define E1_ENABLE_PIN                      P0_21
+//#ifndef E1_CS_PIN
+//  #define E1_CS_PIN                        P0_22
+//#endif
+
+#define E0_STEP_PIN                        P2_11
+#define E0_DIR_PIN                         P2_12
+#define E0_ENABLE_PIN                      P0_21
 #ifndef E0_CS_PIN
-  #define E0_CS_PIN                        P0_05
+  #define E0_CS_PIN                        P0_22
 #endif
 
-#define E1_STEP_PIN                        P2_11
-#define E1_DIR_PIN                         P2_12
-#define E1_ENABLE_PIN                      P0_21
-#ifndef E1_CS_PIN
-  #define E1_CS_PIN                        P0_22
-#endif
 
 #if HAS_TMC_UART
   /**
@@ -144,11 +153,14 @@
   #define Z_SERIAL_TX_PIN                  P1_17
   #define Z_SERIAL_RX_PIN        Z_SERIAL_TX_PIN
 
-  #define E0_SERIAL_TX_PIN                 P0_05
+  //#define E0_SERIAL_TX_PIN                 P0_05
+  //#define E0_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
+
+  #define E0_SERIAL_TX_PIN                 P0_22
   #define E0_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
 
-  #define E1_SERIAL_TX_PIN                 P0_22
-  #define E1_SERIAL_RX_PIN      E1_SERIAL_TX_PIN
+  //#define E1_SERIAL_TX_PIN                 P0_22
+  //#define E1_SERIAL_RX_PIN      E1_SERIAL_TX_PIN
 
   // Reduce baud rate to improve software serial reliability
   #define TMC_BAUD_RATE                    19200
@@ -160,8 +172,8 @@
 #define X_STDBY_PIN                        P3_26
 #define Y_STDBY_PIN                        P3_25
 #define Z_STDBY_PIN                        P1_18
-#define E0_STDBY_PIN                       P1_19
-#define E1_STDBY_PIN                       P2_13
+//#define E0_STDBY_PIN                       P1_19
+#define E0_STDBY_PIN                       P2_13
 
 //
 // Temperature Sensors
